@@ -6,9 +6,8 @@ var resolution = 150;
 var t = 0;
 var p = 0;
 
-function initialize() {
+document.onload = function initialize() {
      var localci = new Array();
-     updateCoordinates(resolution);
      var ci = 0;
      var buf = [];
      for (var i = 0; i < resolution-1; i++) {
@@ -30,44 +29,53 @@ function initialize() {
 	     ci += 5;
 	}
     }
-    document.getElementById("ifs").setAttribute("coordIndex", buf.join(" "));
+    updateCoordinates(resolution);
+    var ifs = document.getElementById("ifs");
+    var localci = new x3dom.fields.MFInt32(buf);
+    ifs.setAttribute("coordIndex", localci);
+    setInterval(animate, 1);
 }
-
-var coordinates = [];
 
 function updateCoordinates(resolution) {
      theta = 0.0;
      phi = 0.0;
      delta = (2 * 3.141592653) / (resolution-1);
-     var index = 0;
+     var buf = [];
      for ( i = 0; i < resolution; i++) {
      	for ( j = 0; j < resolution; j++) {
 		rho = e + f * Math.cos(g * theta + t) * Math.cos(h * phi + p);
-		var x = rho * Math.cos(phi) * Math.cos(theta);
-		var y = rho * Math.cos(phi) * Math.sin(theta);
-		var z = rho * Math.sin(phi);
-		coordinates[index++] = x;
-		coordinates[index++] = y;
-		coordinates[index++] = z;
+		var coord = new x3dom.fields.SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		);
+	     	buf.push(coord);
 		theta += delta;
 	}
 	phi += delta;
      }
-    document.getElementById("crd").setAttribute("point", coordinates.join(" "));
+    var crd = document.getElementById("crd");
+    var coordinates = new x3dom.fields.MFVec3f(buf);
+    crd.setAttribute("point", coordinates);
 }
 
 function animate() {
 	choice = Math.floor(Math.random() * 4);
-	if (choice == 0) {
+	switch (choice) {
+	case 0:
 		e += Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 1) {
+		break;
+	case 1:
 		f += Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 2) {
+		break;
+	case 2:
 		g += Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 3) {
+		break;
+	case 3:
 		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
 	}
-	t += 0.5
+	t += 0.5;
 	p += 0.5;
 	if (f < 1) {
 		f = 10;
@@ -80,7 +88,3 @@ function animate() {
 	}
 	updateCoordinates(resolution);
 }
-
-initialize();
-setInterval(animate, 1);
-// animate();

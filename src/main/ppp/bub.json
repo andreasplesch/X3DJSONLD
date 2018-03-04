@@ -1,0 +1,953 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "component": [
+        {
+          "@name": "Shaders",
+          "@level": 1
+        },
+        {
+          "@name": "CubeMapTexturing",
+          "@level": 1
+        }
+      ],
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "bub.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "description",
+          "@content": "3 prismatic spheres"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/bub.x3d"
+        },
+        {
+          "@name": "translated",
+          "@content": "30 January 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "NavigationInfo": {}
+        },
+        {
+          "Background": {
+            "@backUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+            ],
+            "@frontUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+            ],
+            "@topUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@position": [
+              0,
+              0,
+              20
+            ],
+            "@description": "Look at the bubbles flying"
+          }
+        },
+        {},
+        {
+          "Transform": {
+            "@DEF": "DECLBubble_INSTANCE_transform",
+            "-children": [
+              {
+                "Shape": {
+                  "@DEF": "DECLBubble_INSTANCE_myShape",
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ],
+                          "@specularColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
+                      },
+                      "-texture": {
+                        "ComposedCubeMapTexture": {
+                          "@DEF": "DECLBubble_INSTANCE_texture",
+                          "-back": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                              ]
+                            }
+                          },
+                          "-bottom": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                              ]
+                            }
+                          },
+                          "-front": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                              ]
+                            }
+                          },
+                          "-left": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                              ]
+                            }
+                          },
+                          "-right": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                              ]
+                            }
+                          },
+                          "-top": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "-children": [
+                        {
+                          "#comment": "<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\"value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\"value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\"value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\"value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\"value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\"value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        },
+                        {
+                          "#comment": "<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\"value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\"value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\"value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        }
+                      ],
+                      "-shaders": [
+                        {
+                          "ComposedShader": {
+                            "@DEF": "DECLBubble_INSTANCE_x3dom",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@type": "SFInt32",
+                                "@accessType": "inputOutput",
+                                "@value": 0
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@type": "SFVec3f",
+                                "@accessType": "inputOutput",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x3dom.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "ComposedShader": {
+                            "@DEF": "DECLBubble_INSTANCE_x_ite",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@type": "SFNode",
+                                "@accessType": "inputOutput",
+                                "-children": [
+                                  {
+                                    "ComposedCubeMapTexture": {
+                                      "@USE": "DECLBubble_INSTANCE_texture"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@type": "SFVec3f",
+                                "@accessType": "inputOutput",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "-geometry": {
+                    "Sphere": {}
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "DECLBubble_INSTANCE_Bounce",
+            "field": [
+              {
+                "@name": "translation",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "velocity",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "set_fraction",
+                "@accessType": "inputOnly",
+                "@type": "SFTime"
+              }
+            ],
+            "#sourceText": [
+              "ecmascript: function initialize() { translation = new SFVec3f(0, 0, 0); velocity = new SFVec3f( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5); } function set_fraction() { translation = new SFVec3f( translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z); if (Math.abs(translation.x) > 10) { initialize(); } else if (Math.abs(translation.y) > 10) { initialize(); } else if (Math.abs(translation.z) > 10) { initialize(); } else { velocity.x += Math.random() * 0.2 - 0.1; velocity.y += Math.random() * 0.2 - 0.1; velocity.z += Math.random() * 0.2 - 0.1; } }"
+            ]
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "DECLBubble_INSTANCE_TourTime",
+            "@cycleInterval": 0.15,
+            "@loop": true
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE_TourTime",
+            "@fromField": "cycleTime",
+            "@toNode": "DECLBubble_INSTANCE_Bounce",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE_Bounce",
+            "@fromField": "translation_changed",
+            "@toNode": "DECLBubble_INSTANCE_transform",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "DECLBubble_INSTANCE1000_transform",
+            "-children": [
+              {
+                "Shape": {
+                  "@DEF": "DECLBubble_INSTANCE1000_myShape",
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ],
+                          "@specularColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
+                      },
+                      "-texture": {
+                        "ComposedCubeMapTexture": {
+                          "@DEF": "DECLBubble_INSTANCE1000_texture",
+                          "-back": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                              ]
+                            }
+                          },
+                          "-bottom": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                              ]
+                            }
+                          },
+                          "-front": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                              ]
+                            }
+                          },
+                          "-left": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                              ]
+                            }
+                          },
+                          "-right": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                              ]
+                            }
+                          },
+                          "-top": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "-children": [
+                        {
+                          "#comment": "<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\"value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\"value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\"value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\"value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\"value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\"value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        },
+                        {
+                          "#comment": "<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\"value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\"value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\"value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        }
+                      ],
+                      "-shaders": [
+                        {
+                          "ComposedShader": {
+                            "@DEF": "DECLBubble_INSTANCE1000_x3dom",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@type": "SFInt32",
+                                "@accessType": "inputOutput",
+                                "@value": 0
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@type": "SFVec3f",
+                                "@accessType": "inputOutput",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x3dom.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "ComposedShader": {
+                            "@DEF": "DECLBubble_INSTANCE1000_x_ite",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@type": "SFNode",
+                                "@accessType": "inputOutput",
+                                "-children": [
+                                  {
+                                    "ComposedCubeMapTexture": {
+                                      "@USE": "DECLBubble_INSTANCE1000_texture"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@type": "SFVec3f",
+                                "@accessType": "inputOutput",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "-geometry": {
+                    "Sphere": {}
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "DECLBubble_INSTANCE1000_Bounce",
+            "field": [
+              {
+                "@name": "translation",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "velocity",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "set_fraction",
+                "@accessType": "inputOnly",
+                "@type": "SFTime"
+              }
+            ],
+            "#sourceText": [
+              "ecmascript: function initialize() { translation = new SFVec3f(0, 0, 0); velocity = new SFVec3f( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5); } function set_fraction() { translation = new SFVec3f( translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z); if (Math.abs(translation.x) > 10) { initialize(); } else if (Math.abs(translation.y) > 10) { initialize(); } else if (Math.abs(translation.z) > 10) { initialize(); } else { velocity.x += Math.random() * 0.2 - 0.1; velocity.y += Math.random() * 0.2 - 0.1; velocity.z += Math.random() * 0.2 - 0.1; } }"
+            ]
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "DECLBubble_INSTANCE1000_TourTime",
+            "@cycleInterval": 0.15,
+            "@loop": true
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE1000_TourTime",
+            "@fromField": "cycleTime",
+            "@toNode": "DECLBubble_INSTANCE1000_Bounce",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE1000_Bounce",
+            "@fromField": "translation_changed",
+            "@toNode": "DECLBubble_INSTANCE1000_transform",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "DECLBubble_INSTANCE2000_transform",
+            "-children": [
+              {
+                "Shape": {
+                  "@DEF": "DECLBubble_INSTANCE2000_myShape",
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ],
+                          "@specularColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
+                      },
+                      "-texture": {
+                        "ComposedCubeMapTexture": {
+                          "@DEF": "DECLBubble_INSTANCE2000_texture",
+                          "-back": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                              ]
+                            }
+                          },
+                          "-bottom": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                              ]
+                            }
+                          },
+                          "-front": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                              ]
+                            }
+                          },
+                          "-left": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                              ]
+                            }
+                          },
+                          "-right": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                              ]
+                            }
+                          },
+                          "-top": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "-children": [
+                        {
+                          "#comment": "<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\"value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\"value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\"value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\"value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\"value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\"value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        },
+                        {
+                          "#comment": "<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\"value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\"value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\"value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\"value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\"\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        }
+                      ],
+                      "-shaders": [
+                        {
+                          "ComposedShader": {
+                            "@DEF": "DECLBubble_INSTANCE2000_x3dom",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@type": "SFInt32",
+                                "@accessType": "inputOutput",
+                                "@value": 0
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@type": "SFVec3f",
+                                "@accessType": "inputOutput",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x3dom.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "ComposedShader": {
+                            "@DEF": "DECLBubble_INSTANCE2000_x_ite",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@type": "SFNode",
+                                "@accessType": "inputOutput",
+                                "-children": [
+                                  {
+                                    "ComposedCubeMapTexture": {
+                                      "@USE": "DECLBubble_INSTANCE2000_texture"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@type": "SFVec3f",
+                                "@accessType": "inputOutput",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "-geometry": {
+                    "Sphere": {}
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "DECLBubble_INSTANCE2000_Bounce",
+            "field": [
+              {
+                "@name": "translation",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "velocity",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "set_fraction",
+                "@accessType": "inputOnly",
+                "@type": "SFTime"
+              }
+            ],
+            "#sourceText": [
+              "ecmascript: function initialize() { translation = new SFVec3f(0, 0, 0); velocity = new SFVec3f( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5); } function set_fraction() { translation = new SFVec3f( translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z); if (Math.abs(translation.x) > 10) { initialize(); } else if (Math.abs(translation.y) > 10) { initialize(); } else if (Math.abs(translation.z) > 10) { initialize(); } else { velocity.x += Math.random() * 0.2 - 0.1; velocity.y += Math.random() * 0.2 - 0.1; velocity.z += Math.random() * 0.2 - 0.1; } }"
+            ]
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "DECLBubble_INSTANCE2000_TourTime",
+            "@cycleInterval": 0.15,
+            "@loop": true
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE2000_TourTime",
+            "@fromField": "cycleTime",
+            "@toNode": "DECLBubble_INSTANCE2000_Bounce",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE2000_Bounce",
+            "@fromField": "translation_changed",
+            "@toNode": "DECLBubble_INSTANCE2000_transform",
+            "@toField": "set_translation"
+          }
+        }
+      ]
+    }
+  }
+}

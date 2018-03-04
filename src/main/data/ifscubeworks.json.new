@@ -1,0 +1,194 @@
+{
+  "X3D": {
+    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
+    "@profile": "Interchange",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "template.json"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://coderextreme.net/X3DJSONLD/template.json"
+        },
+        {
+          "@name": "description",
+          "@content": "Template for an Indexed Face Set"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "created",
+          "@content": "4 April 2017"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "Group": {
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "IndexedFaceSet": {
+                        "@containerField": "geometry",
+                        "@DEF": "IndexedFaceSet",
+                        "@coordIndex": [
+                          0,
+                          0,
+                          1,
+                          -1,
+                          0,
+                          1,
+                          1,
+                          -1,
+                          2,
+                          2,
+                          3,
+                          3,
+                          -1,
+                          0,
+                          3,
+                          3,
+                          0,
+                          -1,
+                          0,
+                          3,
+                          2,
+                          1,
+                          -1,
+                          1,
+                          2,
+                          2,
+                          1,
+                          -1,
+                          1,
+                          2,
+                          3,
+                          0,
+                          -1
+                        ],
+                        "@normalIndex": [
+                          0,
+                          0,
+                          1,
+                          2,
+                          3,
+                          4,
+                          5
+                        ],
+                        "@normalPerVertex": true,
+                        "@colorIndex": [
+                          0,
+                          0,
+                          0,
+                          -1,
+                          0,
+                          0,
+                          0,
+                          -1,
+                          0,
+                          0,
+                          0,
+                          0,
+                          -1,
+                          0,
+                          0,
+                          0,
+                          0,
+                          -1,
+                          0,
+                          0,
+                          0,
+                          0,
+                          -1,
+                          0,
+                          0,
+                          0,
+                          0,
+                          -1,
+                          0,
+                          0,
+                          0,
+                          0,
+                          -1
+                        ],
+                        "-coord": [
+                          {
+                            "Coordinate": {
+                              "@containerField": "coord",
+                              "@point": [
+                                0,
+                                0,
+                                1,
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0,
+                                1
+                              ]
+                            }
+                          }
+                        ],
+                        "-normal": [
+                          {
+                            "Normal": {
+                              "@containerField": "normal",
+                              "@vector": [
+                                1,
+                                0,
+                                0,
+                                -1,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                -1,
+                                0,
+                                -1,
+                                0,
+                                0,
+                                0,
+                                1
+                              ]
+                            }
+                          }
+                        ],
+                        "-color": [
+                          {
+                            "Color": {
+                              "@containerField": "color",
+                              "@color": [
+                                0,
+                                1,
+                                0
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

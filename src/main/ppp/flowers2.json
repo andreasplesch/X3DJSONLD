@@ -1,0 +1,332 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "flowers2.x3d",
+          "@content": "title"
+        },
+        {
+          "@name": "author",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "transcriber",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "created",
+          "@content": "23 January 2005"
+        },
+        {
+          "@name": "modified",
+          "@content": "05 May 2017"
+        },
+        {
+          "@name": "description",
+          "@content": "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"
+        },
+        {
+          "@name": "url",
+          "@content": "https://coderextreme.net/x3d/flowers2.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "manually written"
+        },
+        {
+          "@name": "translated",
+          "@content": "30 January 2018"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "NavigationInfo": {}
+        },
+        {
+          "Viewpoint": {
+            "@description": "Two mathematical orbitals",
+            "@position": [
+              0,
+              0,
+              50
+            ]
+          }
+        },
+        {
+          "Group": {
+            "-children": [
+              {
+                "DirectionalLight": {
+                  "@direction": [
+                    1,
+                    1,
+                    1
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@DEF": "OrbitTransform",
+                  "@translation": [
+                    8,
+                    0,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0.5,
+                                  1
+                                ],
+                                "@specularColor": [
+                                  0,
+                                  0.5,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@convex": false,
+                            "@DEF": "Orbit",
+                            "-coord": {
+                              "Coordinate": {
+                                "@DEF": "OrbitCoordinates"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@DEF": "OrbitTransform2",
+                  "@translation": [
+                    -8,
+                    0,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  0.5,
+                                  0
+                                ],
+                                "@specularColor": [
+                                  1,
+                                  0.5,
+                                  0
+                                ],
+                                "@transparency": 0.75
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@DEF": "Orbit2",
+                            "-coord": {
+                              "Coordinate": {
+                                "@DEF": "OrbitCoordinates2"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "Clock",
+                  "@cycleInterval": 16,
+                  "@loop": true
+                }
+              },
+              {
+                "OrientationInterpolator": {
+                  "@DEF": "OrbitPath",
+                  "@key": [
+                    0,
+                    0.5,
+                    1
+                  ],
+                  "@keyValue": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    3.14,
+                    1,
+                    0,
+                    0,
+                    6.28
+                  ]
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "OrbitScript",
+                  "field": [
+                    {
+                      "@name": "set_fraction",
+                      "@accessType": "inputOnly",
+                      "@type": "SFFloat"
+                    },
+                    {
+                      "@name": "coordinates",
+                      "@accessType": "outputOnly",
+                      "@type": "MFVec3f"
+                    },
+                    {
+                      "@name": "coordIndexes",
+                      "@accessType": "outputOnly",
+                      "@type": "MFInt32"
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript: var e = 5; var f = 5; var g = 5; var h = 5; function initialize() { resolution = 100; generateCoordinates(resolution); var localci = []; for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { localci.push(i*resolution+j); localci.push(i*resolution+j+1); localci.push((i+1)*resolution+j+1); localci.push((i+1)*resolution+j); localci.push(-1); } } coordIndexes = new MFInt32(localci); } function generateCoordinates(resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var localc = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = e + f * Math.cos(g * theta) * Math.cos(h * phi); localc.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = new MFVec3f(localc); } function set_fraction(fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: e += Math.floor(Math.random() * 2) * 2 - 1; break; case 1: f += Math.floor(Math.random() * 2) * 2 - 1; break; case 2: g += Math.floor(Math.random() * 2) * 2 - 1; break; case 3: h += Math.floor(Math.random() * 2) * 2 - 1; break; } if (f < 1) { f = 10; } if (g < 1) { g = 4; } if (h < 1) { h = 4; } resolution = 100; generateCoordinates(resolution); }"
+                  ]
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "OrbitScript2",
+                  "field": [
+                    {
+                      "@name": "set_fraction",
+                      "@accessType": "inputOnly",
+                      "@type": "SFFloat"
+                    },
+                    {
+                      "@name": "coordinates",
+                      "@accessType": "outputOnly",
+                      "@type": "MFVec3f"
+                    },
+                    {
+                      "@name": "coordIndexes",
+                      "@accessType": "outputOnly",
+                      "@type": "MFInt32"
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript: var e = 5; var f = 5; var g = 5; var h = 5; function initialize() { resolution = 100; generateCoordinates(resolution); var localci = []; for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { localci.push(i*resolution+j); localci.push(i*resolution+j+1); localci.push((i+1)*resolution+j+1); localci.push((i+1)*resolution+j); localci.push(-1); } } coordIndexes = new MFInt32(localci); } function generateCoordinates(resolution) { theta = 0.0; phi = 0.0; delta = (2 * 3.141592653) / (resolution-1); var localc = []; for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { rho = e + f * Math.cos(g * theta) * Math.cos(h * phi); localc.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = new MFVec3f(localc); } function set_fraction(fraction, eventTime) { choice = Math.floor(Math.random() * 4); switch (choice) { case 0: e += Math.floor(Math.random() * 2) * 2 - 1; break; case 1: f += Math.floor(Math.random() * 2) * 2 - 1; break; case 2: g += Math.floor(Math.random() * 2) * 2 - 1; break; case 3: h += Math.floor(Math.random() * 2) * 2 - 1; break; } if (f < 1) { f = 10; } if (g < 1) { g = 4; } if (h < 1) { h = 4; } resolution = 100; generateCoordinates(resolution); }"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "OrbitScript",
+            "@fromField": "coordIndexes",
+            "@toNode": "Orbit",
+            "@toField": "coordIndex"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "OrbitScript",
+            "@fromField": "coordinates",
+            "@toNode": "OrbitCoordinates",
+            "@toField": "point"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "OrbitScript",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "OrbitScript2",
+            "@fromField": "coordIndexes",
+            "@toNode": "Orbit2",
+            "@toField": "coordIndex"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "OrbitScript2",
+            "@fromField": "coordinates",
+            "@toNode": "OrbitCoordinates2",
+            "@toField": "point"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "OrbitScript2",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "OrbitPath",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "OrbitPath",
+            "@fromField": "value_changed",
+            "@toNode": "OrbitTransform",
+            "@toField": "rotation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "OrbitPath",
+            "@fromField": "value_changed",
+            "@toNode": "OrbitTransform2",
+            "@toField": "rotation"
+          }
+        }
+      ]
+    }
+  }
+}

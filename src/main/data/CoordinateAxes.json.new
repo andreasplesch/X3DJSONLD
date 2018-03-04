@@ -1,0 +1,498 @@
+{
+  "X3D": {
+    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "CoordinateAxis.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "Unknown, see X3D Resources Archives"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "a box"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "Collision": {
+            "@DEF": "DoNotCollideWithVisualizationWidget",
+            "#comment": "Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user",
+            "-children": [
+              {
+                "Group": {
+                  "#comment": "Vertical Y arrow and label",
+                  "-children": [
+                    {
+                      "Group": {
+                        "@DEF": "ArrowGreen",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-geometry": [
+                                {
+                                  "Cylinder": {
+                                    "@containerField": "geometry",
+                                    "@DEF": "ArrowCylinder",
+                                    "@radius": 0.025,
+                                    "@top": true
+                                  }
+                                }
+                              ],
+                              "-appearance": [
+                                {
+                                  "Appearance": {
+                                    "@containerField": "appearance",
+                                    "@DEF": "Green",
+                                    "-material": [
+                                      {
+                                        "Material": {
+                                          "@containerField": "material",
+                                          "@diffuseColor": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "@emissiveColor": [
+                                            0,
+                                            0,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@translation": [
+                                0,
+                                1,
+                                0
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": [
+                                      {
+                                        "Cone": {
+                                          "@containerField": "geometry",
+                                          "@DEF": "ArrowCone",
+                                          "@bottomRadius": 0.05,
+                                          "@height": 0.1
+                                        }
+                                      }
+                                    ],
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "@containerField": "appearance",
+                                          "@USE": "Green"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          1.08,
+                          0
+                        ],
+                        "-children": [
+                          {
+                            "Billboard": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "@containerField": "appearance",
+                                          "@DEF": "LABEL_APPEARANCE",
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@containerField": "material",
+                                                "@diffuseColor": [
+                                                  1,
+                                                  1,
+                                                  0
+                                                ],
+                                                "@emissiveColor": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-geometry": [
+                                      {
+                                        "Text": {
+                                          "@containerField": "geometry",
+                                          "@string": [
+                                            "Y"
+                                          ],
+                                          "-fontStyle": [
+                                            {
+                                              "FontStyle": {
+                                                "@containerField": "fontStyle",
+                                                "@DEF": "LABEL_FONT",
+                                                "@family": [
+                                                  "SANS"
+                                                ],
+                                                "@justify": [
+                                                  "MIDDLE",
+                                                  "MIDDLE"
+                                                ],
+                                                "@size": 0.2
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@rotation": [
+                    0,
+                    0,
+                    1,
+                    -1.57079
+                  ],
+                  "#comment": "Horizontal X arrow and label",
+                  "-children": [
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Group": {
+                              "@DEF": "ArrowRed",
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": [
+                                      {
+                                        "Cylinder": {
+                                          "@containerField": "geometry",
+                                          "@USE": "ArrowCylinder"
+                                        }
+                                      }
+                                    ],
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "@containerField": "appearance",
+                                          "@DEF": "Red",
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@containerField": "material",
+                                                "@diffuseColor": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "@emissiveColor": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Transform": {
+                                    "@translation": [
+                                      0,
+                                      1,
+                                      0
+                                    ],
+                                    "-children": [
+                                      {
+                                        "Shape": {
+                                          "-geometry": [
+                                            {
+                                              "Cone": {
+                                                "@containerField": "geometry",
+                                                "@USE": "ArrowCone"
+                                              }
+                                            }
+                                          ],
+                                          "-appearance": [
+                                            {
+                                              "Appearance": {
+                                                "@containerField": "appearance",
+                                                "@USE": "Red"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@rotation": [
+                                0,
+                                0,
+                                1,
+                                1.57079
+                              ],
+                              "@translation": [
+                                0.072,
+                                1.1,
+                                0
+                              ],
+                              "#comment": "note label rotated back to original coordinate frame",
+                              "-children": [
+                                {
+                                  "Billboard": {
+                                    "-children": [
+                                      {
+                                        "Shape": {
+                                          "-appearance": [
+                                            {
+                                              "Appearance": {
+                                                "@containerField": "appearance",
+                                                "@USE": "LABEL_APPEARANCE"
+                                              }
+                                            }
+                                          ],
+                                          "-geometry": [
+                                            {
+                                              "Text": {
+                                                "@containerField": "geometry",
+                                                "@string": [
+                                                  "X"
+                                                ],
+                                                "-fontStyle": [
+                                                  {
+                                                    "FontStyle": {
+                                                      "@containerField": "fontStyle",
+                                                      "@USE": "LABEL_FONT"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@rotation": [
+                    1,
+                    0,
+                    0,
+                    1.57079
+                  ],
+                  "#comment": "Perpendicular Z arrow and label, note right-hand rule",
+                  "-children": [
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Group": {
+                              "@DEF": "ArrowBlue",
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": [
+                                      {
+                                        "Cylinder": {
+                                          "@containerField": "geometry",
+                                          "@USE": "ArrowCylinder"
+                                        }
+                                      }
+                                    ],
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "@containerField": "appearance",
+                                          "@DEF": "Blue",
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@containerField": "material",
+                                                "@diffuseColor": [
+                                                  0,
+                                                  0,
+                                                  1
+                                                ],
+                                                "@emissiveColor": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Transform": {
+                                    "@translation": [
+                                      0,
+                                      1,
+                                      0
+                                    ],
+                                    "-children": [
+                                      {
+                                        "Shape": {
+                                          "-geometry": [
+                                            {
+                                              "Cone": {
+                                                "@containerField": "geometry",
+                                                "@USE": "ArrowCone"
+                                              }
+                                            }
+                                          ],
+                                          "-appearance": [
+                                            {
+                                              "Appearance": {
+                                                "@containerField": "appearance",
+                                                "@USE": "Blue"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@rotation": [
+                                1,
+                                0,
+                                0,
+                                -1.57079
+                              ],
+                              "@translation": [
+                                0,
+                                1.1,
+                                0.072
+                              ],
+                              "#comment": "note label rotated back to original coordinate frame",
+                              "-children": [
+                                {
+                                  "Billboard": {
+                                    "-children": [
+                                      {
+                                        "Shape": {
+                                          "-appearance": [
+                                            {
+                                              "Appearance": {
+                                                "@containerField": "appearance",
+                                                "@USE": "LABEL_APPEARANCE"
+                                              }
+                                            }
+                                          ],
+                                          "-geometry": [
+                                            {
+                                              "Text": {
+                                                "@containerField": "geometry",
+                                                "@string": [
+                                                  "Z"
+                                                ],
+                                                "-fontStyle": [
+                                                  {
+                                                    "FontStyle": {
+                                                      "@containerField": "fontStyle",
+                                                      "@USE": "LABEL_FONT"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

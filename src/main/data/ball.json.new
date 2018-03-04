@@ -1,0 +1,338 @@
+{
+  "X3D": {
+    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+      "component": [
+        {
+          "@name": "EnvironmentalEffects",
+          "@level": 1
+        },
+        {
+          "@name": "EnvironmentalEffects",
+          "@level": 3
+        },
+        {
+          "@name": "Shaders",
+          "@level": 1
+        },
+        {
+          "@name": "CubeMapTexturing",
+          "@level": 1
+        }
+      ],
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "ball.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/ball.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "a prismatic sphere"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "NavigationInfo": {
+            "@type": [
+              "ANY",
+              "EXAMINE",
+              "FLY",
+              "LOOKAT"
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "Tour Views"
+          }
+        },
+        {
+          "Background": {
+            "@backUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+            ],
+            "@frontUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+            ],
+            "@topUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Sphere": {
+                        "@containerField": "geometry"
+                      }
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@containerField": "appearance",
+                        "-material": [
+                          {
+                            "Material": {
+                              "@containerField": "material",
+                              "@diffuseColor": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "@specularColor": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ],
+                        "-texture": [
+                          {
+                            "ComposedCubeMapTexture": {
+                              "@containerField": "texture",
+                              "@DEF": "texture",
+                              "-back": [
+                                {
+                                  "ImageTexture": {
+                                    "@containerField": "back",
+                                    "@url": [
+                                      "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "-bottom": [
+                                {
+                                  "ImageTexture": {
+                                    "@containerField": "bottom",
+                                    "@url": [
+                                      "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "-front": [
+                                {
+                                  "ImageTexture": {
+                                    "@containerField": "front",
+                                    "@url": [
+                                      "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "-left": [
+                                {
+                                  "ImageTexture": {
+                                    "@containerField": "left",
+                                    "@url": [
+                                      "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "-right": [
+                                {
+                                  "ImageTexture": {
+                                    "@containerField": "right",
+                                    "@url": [
+                                      "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "-top": [
+                                {
+                                  "ImageTexture": {
+                                    "@containerField": "top",
+                                    "@url": [
+                                      "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "#comment": "",
+                        "-children": [
+                          {
+                            "ComposedShader": {
+                              "@language": "GLSL",
+                              "field": [
+                                {
+                                  "@name": "chromaticDispertion",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": "0.98 1 1.033"
+                                },
+                                {
+                                  "@name": "cube",
+                                  "@type": "SFNode",
+                                  "@accessType": "inputOutput",
+                                  "-children": [
+                                    {
+                                      "ComposedCubeMapTexture": {
+                                        "@USE": "texture"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name": "bias",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
+                                  "@value": "0.5"
+                                },
+                                {
+                                  "@name": "scale",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
+                                  "@value": "0.5"
+                                },
+                                {
+                                  "@name": "power",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFFloat",
+                                  "@value": "2"
+                                }
+                              ],
+                              "-children": [
+                                {
+                                  "ShaderPart": {
+                                    "@url": [
+                                      "../shaders/x3dom.vs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                    ],
+                                    "@type": "VERTEX"
+                                  }
+                                },
+                                {
+                                  "ShaderPart": {
+                                    "@DEF": "common",
+                                    "@url": [
+                                      "../shaders/common.fs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
+                                    ],
+                                    "@type": "FRAGMENT"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "ComposedShader": {
+                              "@language": "GLSL",
+                              "field": [
+                                {
+                                  "@name": "chromaticDispertion",
+                                  "@accessType": "initializeOnly",
+                                  "@type": "SFVec3f",
+                                  "@value": "0.98 1 1.033"
+                                },
+                                {
+                                  "@name": "cube",
+                                  "@type": "SFNode",
+                                  "@accessType": "initializeOnly",
+                                  "-children": [
+                                    {
+                                      "ComposedCubeMapTexture": {
+                                        "@USE": "texture"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name": "bias",
+                                  "@accessType": "initializeOnly",
+                                  "@type": "SFFloat",
+                                  "@value": "0.5"
+                                },
+                                {
+                                  "@name": "scale",
+                                  "@accessType": "initializeOnly",
+                                  "@type": "SFFloat",
+                                  "@value": "0.5"
+                                },
+                                {
+                                  "@name": "power",
+                                  "@accessType": "initializeOnly",
+                                  "@type": "SFFloat",
+                                  "@value": "2"
+                                }
+                              ],
+                              "-children": [
+                                {
+                                  "ShaderPart": {
+                                    "@url": [
+                                      "../shaders/x_ite.vs",
+                                      "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
+                                    ],
+                                    "@type": "VERTEX"
+                                  }
+                                },
+                                {
+                                  "ShaderPart": {
+                                    "@USE": "common"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

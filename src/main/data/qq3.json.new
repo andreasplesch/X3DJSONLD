@@ -1,0 +1,333 @@
+{
+  "X3D": {
+    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "qq3.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "translator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "created",
+          "@content": "11 Jan 2015"
+        },
+        {
+          "@name": "modified",
+          "@content": "05 May 2017"
+        },
+        {
+          "@name": "description",
+          "@content": "12 extrusions to test prototype expander"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/x3d/qq3.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "ProtoDeclare": {
+            "@name": "Process",
+            "-children": [
+              {
+                "ProtoBody": {
+                  "-children": [
+                    {
+                      "Group": {
+                        "#comment": "down",
+                        "-children": [
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "@DEF": "ShapeLeftDown",
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "@containerField": "appearance",
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@containerField": "material",
+                                                "@diffuseColor": [
+                                                  0,
+                                                  1,
+                                                  0
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-geometry": [
+                                      {
+                                        "Extrusion": {
+                                          "@containerField": "geometry",
+                                          "@spine": [
+                                            -2.5,
+                                            0,
+                                            0,
+                                            -1.5,
+                                            0,
+                                            0
+                                          ],
+                                          "@creaseAngle": 0.785,
+                                          "@crossSection": [
+                                            1,
+                                            0,
+                                            0.92,
+                                            -0.38,
+                                            0.71,
+                                            -0.71,
+                                            0.38,
+                                            -0.92,
+                                            0,
+                                            -1,
+                                            -0.38,
+                                            -0.92,
+                                            -0.71,
+                                            -0.71,
+                                            -0.92,
+                                            -0.38,
+                                            -1,
+                                            0,
+                                            -0.92,
+                                            0.38,
+                                            -0.71,
+                                            0.71,
+                                            -0.38,
+                                            0.92,
+                                            0,
+                                            1,
+                                            0.38,
+                                            0.92,
+                                            0.71,
+                                            0.71,
+                                            0.92,
+                                            0.38,
+                                            1,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "@DEF": "ShapeUpRight",
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "@containerField": "appearance",
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@containerField": "material",
+                                                "@diffuseColor": [
+                                                  0,
+                                                  0,
+                                                  1
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-geometry": [
+                                      {
+                                        "Extrusion": {
+                                          "@containerField": "geometry",
+                                          "@spine": [
+                                            1.5,
+                                            0,
+                                            0,
+                                            2.5,
+                                            0,
+                                            0
+                                          ],
+                                          "@creaseAngle": 0.785,
+                                          "@crossSection": [
+                                            1,
+                                            0,
+                                            0.92,
+                                            -0.38,
+                                            0.71,
+                                            -0.71,
+                                            0.38,
+                                            -0.92,
+                                            0,
+                                            -1,
+                                            -0.38,
+                                            -0.92,
+                                            -0.71,
+                                            -0.71,
+                                            -0.92,
+                                            -0.38,
+                                            -1,
+                                            0,
+                                            -0.92,
+                                            0.38,
+                                            -0.71,
+                                            0.71,
+                                            -0.38,
+                                            0.92,
+                                            0,
+                                            1,
+                                            0.38,
+                                            0.92,
+                                            0.71,
+                                            0.71,
+                                            0.92,
+                                            0.38,
+                                            1,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "@USE": "ShapeUpRight"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "@USE": "ShapeLeftDown"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "Process pipes",
+            "@orientation": [
+              1,
+              0,
+              0,
+              -0.4
+            ],
+            "@position": [
+              0,
+              5,
+              12
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              -2.5,
+              0
+            ],
+            "-children": [
+              {
+                "ProtoInstance": {
+                  "@name": "Process"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "-children": [
+              {
+                "ProtoInstance": {
+                  "@name": "Process"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              2.5,
+              0
+            ],
+            "-children": [
+              {
+                "ProtoInstance": {
+                  "@name": "Process"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

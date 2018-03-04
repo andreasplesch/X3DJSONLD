@@ -1,0 +1,171 @@
+{
+  "X3D": {
+    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+      "meta": [
+        {
+          "@name": "creator",
+          "@content": "John W Carlson"
+        },
+        {
+          "@name": "created",
+          "@content": "December 13 2015"
+        },
+        {
+          "@name": "title",
+          "@content": "text.x3d"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/text.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "test \\n text"
+        },
+        {
+          "@name": "generator",
+          "@content": "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "Transform": {
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@containerField": "geometry",
+                        "@string": [
+                          "Node\\\"\\\"\\\""
+                        ],
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@containerField": "fontStyle"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@containerField": "appearance",
+                        "-material": [
+                          {
+                            "Material": {
+                              "@containerField": "material"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@containerField": "geometry",
+                        "@string": [
+                          "Node2",
+                          "\\\\\\",
+                          "\\\\\\",
+                          "Node2"
+                        ],
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@containerField": "fontStyle"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@containerField": "appearance",
+                        "-material": [
+                          {
+                            "Material": {
+                              "@containerField": "material"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@containerField": "geometry",
+                        "@string": [
+                          "Node3 \\\\\\\\\\",
+                          "Node3\\\"\\\"\\\""
+                        ],
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@containerField": "fontStyle"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@containerField": "appearance",
+                        "-material": [
+                          {
+                            "Material": {
+                              "@containerField": "material"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Script": {
+                  "field": [
+                    {
+                      "@name": "frontUrls",
+                      "@type": "MFString",
+                      "@accessType": "initializeOnly",
+                      "@value": "\\\"rnl_front.png\\\" \\\"uffizi_front.png\\\""
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript: var me = '\\\"1\\\"\\\"\\\"2\\\"\\\"\\\\n3\\\"';",
+                    ""
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

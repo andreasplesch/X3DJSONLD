@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>X3D JSON Loader</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+   <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
+   <script type="text/javascript" src="../node/x_ite.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.1.1/ajv.min.js"></script>
+    <style type="text/css">
+    
+    X3DCanvas {
+        background: #000;
+        width:  100%;
+        height: 300px;
+    }
+
+    </style>
+</head>
+<body>
+	<X3DCanvas id="x_itedom" cache="false">
+		<X3D >
+			<Scene>
+			</Scene>
+		</X3D>
+		<p>Your browser may not support all features required by X_ITE!</p>
+	</X3DCanvas>
+
+</body>
+    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/loaderJQuery.js"></script><!--for loadSchema and doValidate-->
+    
+    <script type="text/javascript">
+	    
+    	var url = "../data/ball.json";
+    
+	$.getJSON(url, importInto_X_ITE);
+
+	function importInto_X_ITE(json) {
+		var xml = [];
+		loadX3DJS(json, url, xml, "", loadSchema, doValidate, function(jsDOM) {
+			load_X_ITE_DOM(jsDOM);
+		});
+	}
+	    
+    	function load_X_ITE_DOM(element) {
+		X3D(function() {
+			var browser = X3D.getBrowser("#x_itedom");
+			var importedScene = browser.importDocument(element);
+			browser.replaceWorld(importedScene);
+		});
+	}
+    </script>
+</html>

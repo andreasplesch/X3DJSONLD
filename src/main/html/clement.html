@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <title>JSON Loader</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/x_ite/4.0.7/dist/x_ite.css"/>
+   <script type="text/javascript" src="https://cdn.rawgit.com/create3000/x_ite/4.0.7/dist/x_ite.min.js"></script>
+
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <style type="text/css">
+    X3DCanvas {
+        background:#000;
+	width: 900px;
+	height:450px;
+    }
+    X3D {
+        background:#000;
+	width: 900px;
+	height:450px;
+    }
+    </style>
+</head>
+<body>
+<div id="x3domjson"></div>
+</body>
+    <script type="text/javascript" src="node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="node/loaderJQuery.js"></script>
+    <script type="text/javascript">
+	function loadX3DJSON(selector, url) {
+		$.getJSON(url, function(json) {
+			replaceX3DJSON(selector, json, url, [], "", function(element) {
+				if (element === null) {
+					alert("failed to load", url);
+				}
+			});
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+	}
+
+	loadX3DJSON('#x3domjson','http://www.openearthview.net/3dtile.php?format=x3djson&zoom=18&xtile=134118&ytile=95589');
+    </script>
+</html>

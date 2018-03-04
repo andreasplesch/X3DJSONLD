@@ -1,0 +1,531 @@
+{
+  "X3D": {
+    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+      "component": [
+        {
+          "@name": "Geospatial",
+          "@level": 1
+        },
+        {
+          "@name": "NURBS",
+          "@level": 2
+        },
+        {
+          "@name": "Core",
+          "@level": 2
+        },
+        {
+          "@name": "Navigation",
+          "@level": 1
+        },
+        {
+          "@name": "Text",
+          "@level": 1
+        }
+      ],
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "X3dHeaderPrototypeSyntaxExamples.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "X3D scene header and prototype syntax examples. This example header indicates that the content is XML encoded, follows the Interactive Profile and explicitly lists additional necessary components. The X3D header may also contain additional semantic information. Used for specification EXAMPLE excerpts in 19776:1 XML Encoding."
+        },
+        {
+          "@name": "created",
+          "@content": "14 October 2002"
+        },
+        {
+          "@name": "modified",
+          "@content": "7 May 2017"
+        },
+        {
+          "@name": "creator",
+          "@content": "Don Brutzman"
+        },
+        {
+          "@name": "specificationSection",
+          "@content": "X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 4.3 XML file syntax"
+        },
+        {
+          "@name": "specificationUrl",
+          "@content": "http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "ExternProtoDeclare": {
+            "@name": "ViewPositionOrientation",
+            "@url": [
+              "../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation",
+              "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation",
+              "../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation",
+              "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"
+            ],
+            "field": [
+              {
+                "@name": "enabled",
+                "@accessType": "inputOutput",
+                "@type": "SFBool"
+              },
+              {
+                "@name": "traceEnabled",
+                "@accessType": "initializeOnly",
+                "@type": "SFBool"
+              },
+              {
+                "@name": "set_traceEnabled",
+                "@accessType": "inputOnly",
+                "@type": "SFBool"
+              },
+              {
+                "@name": "position_changed",
+                "@accessType": "outputOnly",
+                "@type": "SFVec3f"
+              },
+              {
+                "@name": "orientation_changed",
+                "@accessType": "outputOnly",
+                "@type": "SFRotation"
+              },
+              {
+                "@name": "outputViewpointString",
+                "@accessType": "outputOnly",
+                "@type": "MFString"
+              }
+            ]
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "NewWorldInfoNode",
+            "-children": [
+              {
+                "ProtoBody": {
+                  "-children": [
+                    {
+                      "WorldInfo": {
+                        "@DEF": "ExamplePrototypeBody"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ProtoInstance": {
+            "@name": "NewWorldInfoNode"
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "EmissiveMaterial",
+            "-children": [
+              {
+                "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name": "onlyColor",
+                      "@accessType": "inputOutput",
+                      "@type": "SFColor",
+                      "@value": "1 0 0"
+                    }
+                  ]
+                }
+              },
+              {
+                "ProtoBody": {
+                  "#comment": "Override default diffuseColor value 0.8 0.8 0.8",
+                  "-children": [
+                    {
+                      "Material": {
+                        "@diffuseColor": [
+                          0,
+                          0,
+                          0
+                        ],
+                        "#comment": "Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare.",
+                        "-children": [
+                          {
+                            "IS": {
+                              "connect": [
+                                {
+                                  "@nodeField": "emissiveColor",
+                                  "@protoField": "onlyColor"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ShiftGroupUp2m",
+            "-children": [
+              {
+                "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name": "children",
+                      "@accessType": "inputOutput",
+                      "@type": "MFNode",
+                      "-children": [
+                        {
+                          "Group": {
+                            "@DEF": "DefaultNodeValue",
+                            "@bboxSize": [
+                              2,
+                              2,
+                              2
+                            ],
+                            "#comment": "Authors need to override this node when creating the ProtoInstance fieldValue name=\\\"children\\\""
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "ProtoBody": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          2,
+                          0
+                        ],
+                        "-children": [
+                          {
+                            "Group": {
+                              "-children": [
+                                {
+                                  "IS": {
+                                    "connect": [
+                                      {
+                                        "@nodeField": "children",
+                                        "@protoField": "children"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ProtoInstance": {
+            "@name": "ShiftGroupUp2m"
+          }
+        },
+        {
+          "Viewpoint": {
+            "@DEF": "ExampleSingleElement",
+            "@description": "Hello syntax"
+          }
+        },
+        {
+          "Group": {
+            "@DEF": "ExampleChildElement",
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Box": {
+                        "@containerField": "geometry"
+                      }
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@containerField": "appearance",
+                        "-material": [
+                          {
+                            "Material": {
+                              "@containerField": "material",
+                              "@diffuseColor": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "TransformExampleUSE",
+            "@rotation": [
+              0,
+              1,
+              0,
+              0.78
+            ],
+            "@translation": [
+              0,
+              2.5,
+              0
+            ],
+            "-children": [
+              {
+                "Group": {
+                  "@USE": "ExampleChildElement"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Collision": {
+            "-proxy": [
+              {
+                "Shape": {
+                  "@containerField": "proxy",
+                  "#comment": "alternative: Text string='\\\"He said, \\\\&quot;Immel did it!\\\\&quot;\\\"'",
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@containerField": "geometry",
+                        "@string": [
+                          "He said, \\\"Immel did it!\\\""
+                        ]
+                      }
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@containerField": "appearance",
+                        "-material": [
+                          {
+                            "Material": {
+                              "@containerField": "material"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "-children": [
+              {
+                "Group": {
+                  "@USE": "ExampleChildElement"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              -2.5,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@containerField": "appearance",
+                        "-material": [
+                          {
+                            "ProtoInstance": {
+                              "@containerField": "material",
+                              "@name": "EmissiveMaterial",
+                              "fieldValue": [
+                                {
+                                  "@name": "onlyColor",
+                                  "@value": "0.2 0.6 0.6"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@containerField": "geometry",
+                        "@string": [
+                          "X3D Header Prototype syntax examples",
+                          "(view console for EXTERNPROTO output)"
+                        ],
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@containerField": "fontStyle",
+                              "@justify": [
+                                "MIDDLE",
+                                "MIDDLE"
+                              ],
+                              "@size": 0.6
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ProtoInstance": {
+            "@name": "ViewPositionOrientation",
+            "fieldValue": [
+              {
+                "@name": "enabled",
+                "@value": "true"
+              }
+            ]
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "Clock",
+            "@cycleInterval": 4,
+            "@loop": true
+          }
+        },
+        {
+          "OrientationInterpolator": {
+            "@DEF": "Spinner",
+            "@key": [
+              0,
+              0.5,
+              1
+            ],
+            "@keyValue": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3.14159,
+              0,
+              1,
+              0,
+              6.28318
+            ]
+          }
+        },
+        {
+          "Inline": {
+            "@DEF": "someInline",
+            "@url": [
+              "someUrl.x3d",
+              "http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"
+            ]
+          }
+        },
+        {
+          "IMPORT": {
+            "@AS": "someInlineRoot",
+            "@importedDEF": "someName",
+            "@inlineDEF": "someInline"
+          }
+        },
+        {
+          "PositionInterpolator": {
+            "@DEF": "StayInPlace",
+            "@key": [
+              0,
+              1
+            ],
+            "@keyValue": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "#comment": "====================",
+      "ROUTE": [
+        {
+          "@fromField": "fraction_changed",
+          "@fromNode": "Clock",
+          "@toField": "set_fraction",
+          "@toNode": "Spinner"
+        },
+        {
+          "@fromField": "value_changed",
+          "@fromNode": "Spinner",
+          "@toField": "rotation",
+          "@toNode": "TransformExampleUSE"
+        },
+        {
+          "@fromField": "fraction_changed",
+          "@fromNode": "Clock",
+          "@toField": "set_fraction",
+          "@toNode": "StayInPlace"
+        },
+        {
+          "@fromField": "value_changed",
+          "@fromNode": "StayInPlace",
+          "@toField": "set_translation",
+          "@toNode": "someInlineRoot"
+        }
+      ]
+    }
+  }
+}

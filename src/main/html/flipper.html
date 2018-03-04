@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <title>JSON Loader</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+   <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
+   <script type="text/javascript" src="../node/x_ite.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.1.1/ajv.min.js"></script>
+    <style type="text/css">
+    X3DCanvas {
+        background:#000;
+	width: 900px;
+	height:450px;
+    }
+    X3D {
+        background:#000;
+	width: 900px;
+	height:450px;
+    }
+    </style>
+</head>
+<body>
+    <div id="x3domjson"></div>
+    <X3DCanvas id="x_itedom" cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </X3DCanvas>
+</body>
+    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="../node/Flattener.js"></script>
+    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
+    <script type="text/javascript">
+// From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
+function get(url) {
+  // Return a new promise.
+  return new Promise(function(resolve, reject) {
+    // Do the usual XHR stuff
+    var req = new XMLHttpRequest();
+    req.open('GET', url);
+
+    req.onload = function() {
+      // This is called even on 404 etc
+      // so check the status
+      if (req.status == 200) {
+        // Resolve the promise with the response text
+        resolve(req.response);
+      }
+      else {
+        // Otherwise reject with the status text
+        // which will hopefully be a meaningful error
+        reject(Error(req.statusText));
+      }
+    };
+
+    // Handle network errors
+    req.onerror = function() {
+      reject(Error("Network Error"));
+    };
+
+    // Make the request
+    req.send();
+  });
+}
+
+var x3dtag = "X3D";
+var scenetag = "Scene";
+
+function getJSON(url) {
+  return get(url).then(JSON.parse);
+}
+// Done with include
+
+	function loadX3DJSON(selector, url) {
+		getJSON(url).then(function(json) {
+			var parent = CreateElement(x3dtag);
+			return ConvertToX3DOM(json, x3dtag, parent, url); // returns an element
+		}).then(function(element) {
+			$(selector+" "+x3dtag).remove();
+			$(selector).append(element); // add to X3DOM
+			load_X_ITE_DOM(element); // loads into X_ITE element on page.
+			return element
+		}).then(function(element) {
+			var url = '../data/abox.json';
+			getJSON(url).then(function(subjson) {
+				subjson = protoExpander.prototypeExpander(url, subjson, "");
+				subjson = flattener(subjson);
+				var sceneElement = ConvertToX3DOM(subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), url);  // returns Scene element
+				x3dom.reload();
+				load_X_ITE_DOM(element); // reloads X_ITE element on page.
+			}).catch(function(err) {
+				alert("Subscene Load failed");
+				console.log(err);
+			});
+		}).catch(function(err) {
+			alert("Scene Load failed");
+			console.log(err);
+		});
+	}
+	$(document).ready(function() {
+		loadX3DJSON('#x3domjson','../data/flipp.json');
+	});
+    </script>
+</html>
