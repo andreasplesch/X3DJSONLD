@@ -3,8 +3,12 @@
 <html>
   <head>
    <meta charset="utf-8"/>
-   <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
-   <script type="text/javascript" src="../node/x_ite.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://rawgit.com/create3000/x_ite/72c59deeae416e3432da4cbfbef21c7e469a71f4/dist/x_ite.css"/>
+    <script type="text/javascript" src="https://rawgit.com/create3000/x_ite/72c59deeae416e3432da4cbfbef21c7e469a71f4/dist/x_ite.js"></script>
+    <script type="text/javascript">
+        //patch
+        console.warning = console.warn;
+    </script>
    <style>
 X3DCanvas {
    width: 300px;
@@ -18,7 +22,7 @@ body {
    </style>
    </head>
   <body>
-    <X3DCanvas cache='false' url='"../Examples/Gears/gears.json"'>
+    <X3DCanvas cache='false' url='"../resources/Library/Examples/Gears/gears.json"'>
            <p>Your browser may not support all features required by X_ITE!</p>
 	   <Scene>
 	   </Scene>
